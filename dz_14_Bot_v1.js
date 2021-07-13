@@ -16,17 +16,17 @@ let keywords = [
 let keyword = keywords[getRandom(0, keywords.length)];
 
 document.getElementsByName("text")[0].value = keyword;
-let button = document.querySelector(".mini-suggest__button");
+let btn = document.getElementsByClassName("button mini-suggest__button button_theme_search button_size_search i-bem button_js_inited")[0];
 let links = document.links;
 
-if (button !== undefined) {
+if (btn !== undefined) {
   document.getElementsByName("text")[0].value = keyword;
-  document.querySelector(".mini-suggest__button").click();
+  document.getElementsByClassName("button mini-suggest__button button_theme_search button_size_search i-bem button_js_inited")[0].click();
 } else {
   for (let i = 0; i < links.length; i++) {
     if (links[i].href.includes("napli.ru")) {
       let link = links[i];
-      console.log("Найдена строка " + links[i]);
+      console.log("Найдена строка " + links);
       link.click();
       break;
     }
